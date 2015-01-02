@@ -1,0 +1,13 @@
+*~
+._*
+*.komodoproject
+*.DS_Store
+*.egg-info
+*.pyc
+*.swp
+dist
+build
+.idea
+.coverage
+django-foss-dashboard/settings/local.py
+django-foss-dashboard/settings/production.py

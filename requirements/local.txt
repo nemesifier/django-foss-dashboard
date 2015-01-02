@@ -1,0 +1,5 @@
+-r testing.txt
+
+Sphinx
+django-extensions
+bpython
