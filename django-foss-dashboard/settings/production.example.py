@@ -21,7 +21,6 @@ INFLUXDB_DATABASE = '%s-dashboard' % DASHBOARD_PROJECT_NAME
 DASHBOARD_GITHUB = {
     'user': 'user',
     'repo': 'repo',
-    'token': 'token'
 }
 
 DASHBOARD_MAILMAN2 = {
