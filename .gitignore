@@ -11,3 +11,4 @@ build
 .coverage
 django-foss-dashboard/settings/local.py
 django-foss-dashboard/settings/production.py
+/settings

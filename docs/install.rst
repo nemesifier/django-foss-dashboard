@@ -4,6 +4,7 @@ Install
 pip install virtualenvwrapper
 mkvirtualenv dashboard
 git clone ...
+apt-get install libffi-dev  # for pySSL
 pip install -r requirements.txt
 copy local/production settings from example files
 configure settings

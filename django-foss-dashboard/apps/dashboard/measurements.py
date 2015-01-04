@@ -73,3 +73,30 @@ def store_mailman2_list_subscribers():
             'points': [[total, difference]]
         }
     ])
+
+
+def store_google_analytics_stats():
+    """ collect metrics from a google analytics """
+    import time
+    import datetime
+    from .google_analytics import get_metrics
+
+    yesterday = datetime.date.today() - datetime.timedelta(days=1)
+
+    for analytics_view in settings.DASHBOARD_GOOGLE_ANALYTICS:
+        metrics = get_metrics(
+            certificate_path=analytics_view['certificate_path'],
+            service_account_email_address=analytics_view['service_account_email_address'],
+            profile_id=analytics_view['profile_id'],
+            date=yesterday.strftime('%Y-%m-%d')
+        )
+        # add past time
+        metrics['time'] = time.mktime(yesterday.timetuple())
+        # perform write
+        write_points([
+            {
+                'name': 'google_analytics.%s' % analytics_view['series-name'],
+                'columns': metrics.keys(),
+                'points': [metrics.values()]
+            }
+        ])

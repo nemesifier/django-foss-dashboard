@@ -5,3 +5,5 @@
 django
 django-influxdb-metrics
 requests
+google-api-python-client
+pyOpenSSL

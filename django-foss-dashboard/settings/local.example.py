@@ -1,6 +1,9 @@
 from .base import *
 
 
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
 ADMINS = (
     #('admin1', 'my@email.com'),
 )
@@ -9,7 +12,7 @@ MANAGERS = ADMINS
 
 INSTALLED_APPS += ['django_extensions']
 
-DASHBOARD_PROJECT_NAME = 'nodeshot'
+DASHBOARD_PROJECT_NAME = 'myproject'
 
 INFLUXDB_HOST = 'localhost'
 INFLUXDB_PORT = '8086'
@@ -27,3 +30,12 @@ DASHBOARD_MAILMAN2 = {
     'password': 'password',
     'verify_ssl': False
 }
+
+DASHBOARD_GOOGLE_ANALYTICS = [
+    {
+        'series-name': 'ga-myproject',
+        'certificate_path': '/path/to/myproject.p12',
+        'service_account_email_address': 'myproject@developer.gserviceaccount.com',
+        'profile_id': 'GA_PROFILE_ID'
+    }
+]
