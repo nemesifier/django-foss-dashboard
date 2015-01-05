@@ -162,7 +162,7 @@ LOGGING = {
 try:
     from .local import *
 except ImportError:
-    pass
+    from .production import *
 
 
 # importing test settings file if necessary (TODO chould be done better)
