@@ -60,7 +60,7 @@ def store_mailman2_list_subscribers():
     total = int(subscribers)
     # get last subscribers count
     try:
-        last = query('SELECT subscribers FROM mailing_list LIMIT 1')[0]['points'][0][2]
+        last = query('SELECT total FROM mailing_list LIMIT 1')[0]['points'][0][2]
     except InfluxDBClientError:
         last = total
     # calculate difference
